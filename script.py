@@ -170,7 +170,7 @@ def streamlit_app():
     
     # Display support
     display_support()
-    
+
     # Photo Upload Option
     st.header("Photo Upload")
     uploaded_file = st.file_uploader("Choose a photo", type=["jpg", "jpeg", "png"])
@@ -250,24 +250,24 @@ def streamlit_app():
 
     # Main Page
     with col2:
-        if st.button("Speak Prompt"):
-            
-            # Validate API Key
+        if st.button("Speak Prompt", key="speak_prompt_button"):
+        
+        # Validate API Key
             if st.session_state.api_key is None or st.session_state.api_key == '':
                 st.toast("Please enter API Key in the sidebar.", icon="❌")
             else:
                 st.session_state['prompt'] = get_prompt_from_mic()
-            
+        
     with col3:
-        if st.button("Ask Gemini") and st.session_state['captured_image'] is not None:
-            
-            # Validate API Key
+        if st.button("Ask Gemini", key="ask_gemini_button") and st.session_state['captured_image'] is not None:
+        
+        # Validate API Key
             if st.session_state.api_key is None or st.session_state.api_key == '':
                 st.toast("Please enter API Key in the sidebar.", icon="❌")
             elif st.session_state.prompt is None or st.session_state.prompt == '':
                 st.toast("Please enter prompt first.", icon="❌")
             else:
-                # Check if image is captured
+            # Check if image is captured
                 if st.session_state['captured_image'] is None:
                     st.toast("Please capture image first.", icon="❌")
                 else:
