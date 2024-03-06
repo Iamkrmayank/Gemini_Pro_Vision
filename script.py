@@ -4,6 +4,7 @@ This scans the image and using Gemini AI pro vision API it generates the descrpt
 It also uses the speech to text and text to speech to speak the prompt and display the description of the image.
 It also uses the webcam to capture the image and display it.
 
+
 Features:
 1. Webcam detection using WebRTC, OpenCV and PIL
 2. Speech to text using Google Cloud Speech to Text API
